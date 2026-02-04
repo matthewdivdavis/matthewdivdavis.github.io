@@ -38,6 +38,7 @@ header {
     color: #00478d;
 }
 
+
 .text-box h1{
     margin-top: 10px;
     line-height: 1.1;
@@ -47,6 +48,17 @@ header {
     margin-top: 0;
 }
 
+.project-link a{
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.project-link a:hover{
+    color: rgb(70, 70, 70);
+    font-weight: bold;
+    font-size: 20px;
+}
 
 
 h1 {
@@ -81,12 +93,46 @@ a {
 }
 
 .text-box {
-  background-color: white; 
+  background-color: rgb(255, 255, 255, .8); 
   padding: 5px 5px;                   /* space inside box */
   border-radius: 10px;                  /* optional rounded corners */
   text-align: center;
-  max-width: 400px;
+  max-width: 300px;
   width: 60%;
   /* height: 100%; */
   margin: 0 auto;
+}
+
+span{
+    font-family: monospace;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.inline-image{
+    margin-right: 20px;
+    background-image: url("images/barplot-project1.png");
+    background-size: cover;
+    width: 90%;
+    max-width: 800px;
+}
+
+.project-figure {
+    text-align: center;
+}
+
+.project-figure img{
+    width: 700px;
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+.project-figure2 {
+    text-align: center;
+}
+
+.project-figure2 img{
+    width: 400px;
+    max-width: 100%;
+    border-radius: 8px;
 }
