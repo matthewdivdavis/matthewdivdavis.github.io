@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matthew Davis | Projects</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body> 
+    <div class = "top-banner">
+        <h1>Matthew Davis</h1>
+        <a href="index.html">Home </a>
+        <a href="index.html#projects">Projects </a>
+        <a href="index.html#about">About </a>
+        <!-- <a href="#story">Stories</a> -->
+        <a href="index.html#contact">Contact</a>
+    </div>
+    <header>
+        <div class = "text-box">
+            <h1>Matthew Davis</h1>
+            <p>School Funding and Economic Mobility</p>
+        </div>
+    </header>
+    <section id = "School-Funding">
+        <h2>My Objective</h2>
+        <p>Something that interests me is economic mobility trends, and why certain people may be able to obtain financial success. As a part of this, I was curious to see how school funding may be an indicator of future economic success. I pulled data from a site you can find <a href="https://educationdata.org/public-education-spending-statistics#ut">here</a> which had some relevant education data, specifically, it had how much each state in the U.S. spends on education per-pupil. This article was last updated on February 8, 2025, so it felt timely as well.</p>
+        <h2>Process</h2>
+        <p>I used the libraries <span>dplyr, tidyverse, rvest, readr, ggplot</span> and <span>knitr</span> to help work with the data. I read in the data, and did some cleaning (mostly changing strings into integers). I pivoted the columns and then wanted to see the weights of all the values with z-scores, so I added z-scores to all the data and labeled them low/mid/high. Low being values that are under 1 standard deviation away, mid values are within 1 standard deviation (1 above or 1 below the mean), and high values are at least 1 standard deviation above the mean.</p>
+        <p>Once all of this was done I decided it was time to see my first plot: </p>
+        <figure class="project-figure">
+            <img src="images/barplot-project1.png" alt="Average State Spending Per Student Colored by Distance From the Mean">
+        </figure>
+        <p>Now that I had all the school funding data, I needed to pull so income data. I chose statewide median income because I felt it would be a more accurate representation of the true income, hopefully removing outliers on the tails. I pulled data from a site you can find <a href="https://worldpopulationreview.com/state-rankings/median-household-income-by-state">here.</a> The data is from 2024 so I felt it was timely.</p>
+        <p>I scraped the data and did some simple cleaning (there was an extra column because of how I scraped the data) and converted the dollar amounts from a string to a numeric type.</p>
+        <p>Now that I had two clean datasets I merged them using "state" as the common key ('value' is the funding per student).</p>
+        <figure class="project-figure2">
+            <img src="images/headtable.png" alt="Table Head">
+        </figure>
+        <p>With the data merged I wanted to see if there was any type of relationship between the median income and thea average spending per student on education. I'll note here that there are a lot of confounding variables. Just because you graduate in a state, you may not live in that state later in life, also this data is from the same couple years, meaning that the graduates receiving the funding in the data curretntly would not be contributing to the data. Due to data scarcity I went forward knowing this could be a good initial glance into the problem, with more research needed later. </p>
+        <p>Regardless of confounding variables, this it what I found: </p>
+        <figure class="project-figure">
+            <img src="images/scatterplot.png" alt="Correlation between school spending and state income.">
+        </figure>
+        <p>Using R I found the correlation coefficient was 0.565. With 0 being not correlated at all and 1 being perfect correlation, this is somewhere in between. There is a trend, but a loose trend. This is not that surprising considering the confounding variables that would get in the way, the biggest one being relocation after graduation. It also makes sense that a state with a higher median income would spend more on education, because they have more tax revenue than a state with a lower income.</p>
+    </section>
+</body>
