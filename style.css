@@ -18,7 +18,7 @@ header {
     padding: 50px 0 50px;
     color: black;
     margin: 0 auto;
-    border-radius: 1%;
+    border-radius: 8px;
 }
 
 .top-banner{
@@ -38,6 +38,9 @@ header {
     color: #00478d;
 }
 
+.about a:hover{
+    color: #00478d;
+}
 
 .text-box h1{
     margin-top: 10px;
@@ -68,6 +71,12 @@ h1 {
 h2 {
     color: #0066cc;
     margin-top: 40px;
+}
+
+h3 {
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
 }
 
 section {
@@ -135,4 +144,43 @@ span{
     width: 400px;
     max-width: 100%;
     border-radius: 8px;
+}
+
+.chris_sweater {
+    text-align: center;
+}
+
+.chris_sweater img{
+    width: 300px;
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+p1 {
+    font-size: 14px;
+}
+
+.photo-gallery {
+    max-width: 800px;
+    margin: 60px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;   /* crops nicely without stretching */
+    border-radius: 8px;
+    transition: transform 0.2s ease;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.05);
 }
